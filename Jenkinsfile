@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm cache clean --force && npm install'
+                sh 'npm cache clean --force && npm config rm proxy && npm config rm https-proxy && npm cache verify && npm install'
             }
         }
     }
